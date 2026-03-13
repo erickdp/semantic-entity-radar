@@ -1,0 +1,19 @@
+# 1. todos estos hooks se ejecutan antes de hacer commit
+# 2. comando pre-commit run ejecuta todos estos hooks solo en ficheros git stage pero --all-files ejecuta en todos
+# 3. para commit con emoji uso commitizen y el comando czem
+# (que es un alias de "uv run pre-commit run --all-files && cz --name cz_gitmoji commit") config en ~/.zshrc
+# https://commitizen-tools.github.io/commitizen/third-party-plugins/cz-conventional-gitmoji/
+# en caso de fallar el commit por ruff hacer cz c --retry, toma el formulario ya lleno
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.3.0
+    hooks:
+    -   id: check-yaml # revisión de archivos yaml
+    -   id: end-of-file-fixer # un espacio en blanco adicional al final de cada script
+    -   id: trailing-whitespace # espacios en blanco innecesarios al final de cada texto
+-   repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.9.0
+    hooks:
+    -   id: ruff
+        args: [ --fix ] # importaciones innecesarias o notificación de código no usado
+    -   id: ruff-format

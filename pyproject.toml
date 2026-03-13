@@ -1,0 +1,26 @@
+[project]
+name = "semantic-entity-radar"
+version = "0.1.0"
+description = "Side project to know about public entity opinion on social networks"
+readme = "README.md"
+authors = [
+    { name = "Erick Díaz", email = "erickdp@hotmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "commitizen>=4.13.9",
+    "cz-conventional-gitmoji>=0.7.0",
+    "fabric>=3.2.2",
+    "pre-commit>=4.5.1",
+]
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+tag_format = "$version"
+version_scheme = "pep440"
+version_provider = "uv"
+update_changelog_on_bump = true
+major_version_zero = true
