@@ -2,12 +2,6 @@ import sys
 from pathlib import Path
 
 import pytest
-
-ROOT_DIR = Path(__file__).resolve().parents[1]
-
-if str(ROOT_DIR) not in sys.path:
-    sys.path.insert(0, str(ROOT_DIR))
-
 from src.infrastructure.adapters.outbound.qdrant_vector_store_adapter import (
     QdrantVectorStoreAdapter,
 )
@@ -16,6 +10,11 @@ from src.infrastructure.adapters.outbound.embedding_fastembed_adapter import (
 )
 from src.infrastructure.adapters.outbound.bm25_lexical_adapter import BM25LexicalAdapter
 from src.infrastructure.settings.app_settings import AppSettings
+
+ROOT_DIR = Path(__file__).resolve().parents[1]
+
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
 
 
 @pytest.fixture(scope="session")

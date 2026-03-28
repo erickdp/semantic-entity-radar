@@ -1,6 +1,6 @@
 [project]
 name = "semantic-entity-radar"
-version = "0.1.0"
+version = "0.2.0"
 description = "Side project to know about public entity opinion on social networks"
 readme = "README.md"
 authors = [
@@ -31,7 +31,7 @@ dev = [
 ]
 
 [tool.commitizen]
-name = "cz_conventional_commits"
+name = "cz_gitmoji"
 tag_format = "$version"
 version_scheme = "pep440"
 version_provider = "uv"
