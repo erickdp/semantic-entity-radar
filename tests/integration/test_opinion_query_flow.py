@@ -1,6 +1,6 @@
 from fastapi.testclient import TestClient
 
-from src.entrypoints.api.main import create_app
+from src.main import create_app
 
 
 def test_opinion_query_flow_returns_citations_with_metadata() -> None:

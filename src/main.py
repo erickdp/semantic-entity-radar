@@ -1,3 +1,4 @@
+import uvicorn
 from fastapi import FastAPI
 
 from src.entrypoints.api.error_handlers import install_error_handlers
@@ -13,4 +14,6 @@ def create_app() -> FastAPI:
     return app
 
 
-app = create_app()
+if __name__ == "__main__":
+    app = create_app()
+    uvicorn.run(app, host="0.0.0.0", port=8000)
