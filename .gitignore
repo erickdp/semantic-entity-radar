@@ -16,3 +16,5 @@ secrets/
 .specify
 specs/
 AGENTS.md
+
+*.json
